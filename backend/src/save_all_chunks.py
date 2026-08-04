@@ -1,5 +1,4 @@
 import pandas as pd
-import os
 import json
 
 def save_chunk(files):
@@ -13,6 +12,6 @@ def save_chunk(files):
         
     df = pd.concat(all_df, ignore_index=True)
 
-    df.to_parquet(f"parquet_files/all_saved_chunks.parquet")
+    df.to_parquet("parquet_files/all_saved_chunks.parquet")
     
     

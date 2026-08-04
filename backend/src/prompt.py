@@ -2,18 +2,25 @@ import pandas as pd
 from sklearn.metrics.pairwise import cosine_similarity
 import requests as req
 import numpy as np
+import shutil
+import os
 
 def embed_factory(l):
     r = req.post(url="http://localhost:11434/api/embed", json={"model" : "bge-m3", "input" : l})
     return r.json()["embeddings"]
 
-def prompt(file_name, user_query):
+def prompt(file_name, user_query, test=None, test_path=None):
+    try:
+        if test:
+            shutil.copy(test_path, os.path.join("saved_parquets", f"{file_name}.parquet"))  #type: ignore
+    except Exception as e:
+        print(e)
     try :
         db = pd.read_parquet(f"parquet_files/{file_name}.parquet")
     except :
         db = pd.read_parquet(f"saved_parquets/{file_name}.parquet")
     response = cosine_similarity(np.vstack(db["embedding"]), embed_factory(user_query)).flatten().argsort()[::-1][:3] #type: ignore
-       
+            
     df = db.loc[response]
 
     prompt = f'''help the user with the data given below that contains Video number, starting point in seconds, ending point in seconds and the text between starting point and ending point :
