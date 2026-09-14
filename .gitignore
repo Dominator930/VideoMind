@@ -1,0 +1,56 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+*.pyo
+*.pyd
+.Python
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Project-specific — intermediate processing files (generated at runtime)
+backend/src/Audio/*
+backend/src/Video/*
+backend/src/Transcripted_json/*
+backend/src/Managed_chunk/*
+backend/src/parquet_files/*
+backend/src/saved_parquets/*
+
+# Keep placeholder files that mark the directories
+!backend/src/Audio/.gitkeep
+!backend/src/Video/.gitkeep
+!backend/src/Transcripted_json/.gitkeep
+!backend/src/Managed_chunk/.gitkeep
+!backend/src/parquet_files/.gitkeep
+!backend/src/saved_parquets/.gitkeep
+
+# Test subjects (may contain user data)
+backend/test/test_subjects/*.parquet
+backend/test/test_subjects/*.mp4
+backend/test/test_subjects/*.mkv
+backend/test/test_subjects/*.avi
+backend/test/test_subjects/*.mov
+
+# Misc
+*.log
+.env

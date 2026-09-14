@@ -1,0 +1,6 @@
+/* VideoMind Default Style Sheet */
+
+QMainWindow {
+    background-color: #FFFFFF;
+    color: #111111;
+}

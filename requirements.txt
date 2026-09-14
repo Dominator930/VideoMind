@@ -3,5 +3,8 @@ numpy
 scikit-learn
 requests
 openai-whisper
+torch
 imageio_ffmpeg
 pyarrow
+PySide6
+tqdm
