@@ -66,8 +66,8 @@ LLM Answer        (qwen3:4b or any Ollama model)
 ## Step 1. Clone the repository
 
 ```bash
-git clone https://github.com/Dominator930/Video-Question-Answering-System.git
-cd Video-Question-Answering-System
+git clone https://github.com/Dominator930/VideoMind.git
+cd VideoMind
 ```
 
 -----------------------------------------------------------------------------------------------------------------
